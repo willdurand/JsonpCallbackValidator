@@ -58,7 +58,11 @@ class CallbackValidator
         'false',
     );
 
-    public function isValid($callback)
+    /**
+     * @param  string  $callback
+     * @return boolean
+     */
+    public function validate($callback)
     {
         foreach (explode('.', $callback) as $identifier) {
             if (!preg_match('/^[a-zA-Z_$][0-9a-zA-Z_$]*(?:\[(?:".+"|\'.+\'|\d+)\])*?$/', $identifier)) {

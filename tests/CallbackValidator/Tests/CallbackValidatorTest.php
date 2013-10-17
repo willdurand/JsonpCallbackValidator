@@ -16,7 +16,7 @@ class CallbackValidatorTest extends TestCase
     public function testIsValid($callback, $expected)
     {
         $validator = new CallbackValidator();
-        $this->assertEquals($expected, $validator->isValid($callback));
+        $this->assertEquals($expected, $validator->validate($callback));
     }
 
     public static function dataProviderForTestIsValid()
