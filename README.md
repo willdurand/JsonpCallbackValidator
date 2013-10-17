@@ -1,8 +1,8 @@
 CallbackValidator
 =================
 
-**CallbackValidator** is a tiny library that allows you to **validate a JSONP
-callback** in order to prevent XSS attacks.
+**CallbackValidator** allows you to **validate a JSONP callback** in order to
+prevent XSS attacks.
 
 [![Build
 Status](https://travis-ci.org/willdurand/CallbackValidator.png?branch=master)](https://travis-ci.org/willdurand/CallbackValidator)
@@ -15,7 +15,10 @@ Usage
 $validator = new \CallbackValidator\CallbackValidator();
 
 $validator->validate('JSONP.callback');
-// returns `true` or `false` depending on the given callback value
+// returns `true`
+
+$validator->validate('(function xss(x){evil()})');
+// returns `false`
 ```
 
 
