@@ -11,15 +11,15 @@ class CallbackValidatorTest extends TestCase
     const IS_INVALID = false;
 
     /**
-     * @dataProvider dataProviderForTestIsValid
+     * @dataProvider dataProviderForTestValidate
      */
-    public function testIsValid($callback, $expected)
+    public function testValidate($callback, $expected)
     {
         $validator = new CallbackValidator();
         $this->assertEquals($expected, $validator->validate($callback));
     }
 
-    public static function dataProviderForTestIsValid()
+    public static function dataProviderForTestValidate()
     {
         return array(
             array('foo',                          self::IS_VALID),
