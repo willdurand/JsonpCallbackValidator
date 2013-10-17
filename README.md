@@ -1,18 +1,18 @@
-CallbackValidator
-=================
+JsonpCallbackValidator
+======================
 
-**CallbackValidator** allows you to **validate a JSONP callback** in order to
-prevent XSS attacks.
+**JsonpCallbackValidator** allows you to **validate a JSONP callback** in order
+to prevent XSS attacks.
 
 [![Build
-Status](https://travis-ci.org/willdurand/CallbackValidator.png?branch=master)](https://travis-ci.org/willdurand/CallbackValidator)
+Status](https://travis-ci.org/willdurand/JsonpCallbackValidator.png?branch=master)](https://travis-ci.org/willdurand/JsonpCallbackValidator)
 
 
 Usage
 -----
 
 ```php
-$validator = new \CallbackValidator\CallbackValidator();
+$validator = new \JsonpCallbackValidator();
 
 $validator->validate('JSONP.callback');
 // returns `true`
@@ -25,19 +25,19 @@ $validator->validate('(function xss(x){evil()})');
 Installation
 ------------
 
-The recommended way to install CallbackValidator is through
+The recommended way to install JsonpCallbackValidator is through
 [Composer](http://getcomposer.org/):
 
 ``` json
 {
     "require": {
-        "willdurand/callback-validator": "@stable"
+        "willdurand/jsonp-callback-validator": "@stable"
     }
 }
 ```
 
 **Protip:** you should browse the
-[`willdurand/callback-validator`](https://packagist.org/packages/willdurand/callback-validator)
+[`willdurand/jsonp-callback-validator`](https://packagist.org/packages/willdurand/jsonp-callback-validator)
 page to choose a stable version to use, avoid the `@stable` meta constraint.
 
 
@@ -69,5 +69,5 @@ Credits
 License
 -------
 
-CallbackValidator is released under the MIT License. See the bundled LICENSE
-file for details.
+JsonpCallbackValidator is released under the MIT License. See the bundled
+LICENSE file for details.

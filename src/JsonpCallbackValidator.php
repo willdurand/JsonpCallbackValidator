@@ -1,14 +1,12 @@
 <?php
 
-namespace CallbackValidator;
-
 /**
  * Most of the code above took inspiration from:
  * https://gist.github.com/ptz0n/1217080.
  *
  * @author William Durand <william.durand1@gmail.com>
  */
-class CallbackValidator
+class JsonpCallbackValidator
 {
     private $reservedKeywords = array(
         'break',

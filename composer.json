@@ -1,5 +1,5 @@
 {
-    "name": "willdurand/callback-validator",
+    "name": "willdurand/jsonp-callback-validator",
     "description": "JSONP callback validator.",
     "type": "library",
     "license": "MIT",
@@ -16,7 +16,7 @@
         "phpunit/phpunit": "~3.7"
     },
     "autoload": {
-        "psr-0": { "CallbackValidator": "src/" }
+        "psr-0": { "JsonpCallbackValidator": "src/" }
     },
     "config": {
         "bin-dir": "bin"

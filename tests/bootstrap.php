@@ -11,5 +11,3 @@ $ phpunit
 EOT
     );
 }
-
-$loader->add('CallbackValidator\Tests', __DIR__);

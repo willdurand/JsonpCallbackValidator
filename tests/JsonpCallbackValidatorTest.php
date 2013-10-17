@@ -1,10 +1,6 @@
 <?php
 
-namespace CallbackValidator\Tests;
-
-use CallbackValidator\CallbackValidator;
-
-class CallbackValidatorTest extends TestCase
+class JsonpCallbackValidatorTest extends \PHPUnit_Framework_TestCase
 {
     const IS_VALID   = true;
 
@@ -15,7 +11,7 @@ class CallbackValidatorTest extends TestCase
      */
     public function testValidate($callback, $expected)
     {
-        $validator = new CallbackValidator();
+        $validator = new \JsonpCallbackValidator();
         $this->assertEquals($expected, $validator->validate($callback));
     }
 
