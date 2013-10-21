@@ -37,7 +37,7 @@ class JsonpCallbackValidatorTest extends \PHPUnit_Framework_TestCase
             array('array_of_functions["key"]',    self::IS_VALID),
             array('_function',                    self::IS_VALID),
             array('petersCallback1412331422[12]', self::IS_VALID),
-            array('(function xss(x) {evil()})',    self::IS_INVALID),
+            array('(function xss(x){evil()})',    self::IS_INVALID),
             array('',                             self::IS_INVALID),
             array('alert()',                      self::IS_INVALID),
             array('test()',                       self::IS_INVALID),
