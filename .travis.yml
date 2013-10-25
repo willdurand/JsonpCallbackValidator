@@ -10,15 +10,17 @@ env:
     - HHVM=false
 
 before_install:
-    - PHP_VERSION=`phpenv global`
-    - if [[ "$HHVM" == true && "5.5" != "$PHP_VERSION" ]] ; then export SCRIPT="exit"; fi
-    # Scripts to run the test suite
-    - if [[ "$HHVM" == true && "5.5" == "$PHP_VERSION" ]] ; then sudo .bin/install_hhvm; export SCRIPT="hhvm -f vendor/bin/phpunit"; fi
-    - if [[ "$HHVM" == false ]] ; then export SCRIPT="./vendor/bin/phpunit --coverage-text"; fi
+    # Define the IS_HHVM_JOB variable
+    - if [[ $HHVM == true && `phpenv global` == "5.5" ]] ; then IS_HHVM_JOB=true ; else IS_HHVM_JOB=false ; fi
+    # Define the IS_PHP_JOB variable
+    - if [[ $HHVM == false ]] ; then IS_PHP_JOB=true ; else IS_PHP_JOB=false ; fi
+    # Install HHVM if needed
+    - if [[ $IS_HHVM_JOB == true ]] ; then sudo .bin/install_hhvm; fi
 
 before_script:
     - curl -s http://getcomposer.org/installer | php
     - php composer.phar install --dev
-    - echo "$SCRIPT"
 
-script: "$SCRIPT"
+script:
+    - if [[ $IS_PHP_JOB == true ]]  ; then ./vendor/bin/phpunit --coverage-text ; fi
+    - if [[ $IS_HHVM_JOB == true ]] ; then hhvm -f vendor/bin/phpunit ; fi
