@@ -5,8 +5,20 @@ php:
     - 5.4
     - 5.5
 
+env:
+    - HHVM=true
+    - HHVM=false
+
+before_install:
+    - PHP_VERSION=`phpenv global`
+    - if [[ "$HHVM" == true && "5.5" != "$PHP_VERSION" ]] ; then export SCRIPT="exit"; fi
+    # Scripts to run the test suite
+    - if [[ "$HHVM" == true && "5.5" == "$PHP_VERSION" ]] ; then sudo .bin/install_hhvm; export SCRIPT="hhvm -f vendor/bin/phpunit"; fi
+    - if [[ "$HHVM" == false ]] ; then export SCRIPT="./vendor/bin/phpunit --coverage-text"; fi
+
 before_script:
     - curl -s http://getcomposer.org/installer | php
     - php composer.phar install --dev
+    - echo "$SCRIPT"
 
-script: bin/phpunit --coverage-text
+script: "$SCRIPT"

@@ -50,7 +50,7 @@ Setup the test suite using Composer:
 
 Run it using PHPUnit:
 
-    $ bin/phpunit
+    $ ./vendor/bin/phpunit
 
 
 Contributing
