@@ -6,6 +6,10 @@ to prevent XSS attacks.
 
 [![Build
 Status](https://travis-ci.org/willdurand/JsonpCallbackValidator.png?branch=master)](https://travis-ci.org/willdurand/JsonpCallbackValidator)
+[![Total
+Downloads](https://poser.pugx.org/willdurand/jsonp-callback-validator/downloads.png)](https://packagist.org/packages/willdurand/jsonp-callback-validator)
+[![Latest Stable
+Version](https://poser.pugx.org/willdurand/jsonp-callback-validator/v/stable.png)](https://packagist.org/packages/willdurand/jsonp-callback-validator)
 
 
 Usage
