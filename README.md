@@ -26,6 +26,15 @@ $validator->validate('(function xss(x){evil()})');
 // returns `false`
 ```
 
+Or as a static method:
+
+```php
+\JsonpCallbackValidator::validate('JSONP.callback');
+// returns `true`
+
+\JsonpCallbackValidator::validate('(function xss(x){evil()})');
+// returns `false`
+```
 
 Installation
 ------------

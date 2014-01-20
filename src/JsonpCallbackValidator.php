@@ -8,9 +8,9 @@
  */
 class JsonpCallbackValidator
 {
-    private $regexp = '/^[a-zA-Z_$][0-9a-zA-Z_$]*(?:\[(?:"(?:\\\.|[^"\\\])*"|\'(?:\\\.|[^\'\\\])*\'|\d+)\])*?$/';
+    private static $regexp = '/^[a-zA-Z_$][0-9a-zA-Z_$]*(?:\[(?:"(?:\\\.|[^"\\\])*"|\'(?:\\\.|[^\'\\\])*\'|\d+)\])*?$/';
 
-    private $reservedKeywords = array(
+    private static $reservedKeywords = array(
         'break',
         'do',
         'instanceof',
@@ -62,14 +62,14 @@ class JsonpCallbackValidator
      * @param  string  $callback
      * @return boolean
      */
-    public function validate($callback)
+    public static function validate($callback)
     {
         foreach (explode('.', $callback) as $identifier) {
-            if (!preg_match($this->regexp, $identifier)) {
+            if (!preg_match(self::$regexp, $identifier)) {
                 return false;
             }
 
-            if (in_array($identifier, $this->reservedKeywords)) {
+            if (in_array($identifier, self::$reservedKeywords)) {
                 return false;
             }
         }
