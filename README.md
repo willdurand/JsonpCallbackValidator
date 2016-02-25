@@ -40,27 +40,18 @@ Installation
 ------------
 
 The recommended way to install JsonpCallbackValidator is through
-[Composer](http://getcomposer.org/):
+[Composer](https://getcomposer.org/):
 
-``` json
-{
-    "require": {
-        "willdurand/jsonp-callback-validator": "@stable"
-    }
-}
+```bash
+$ composer require willdurand/jsonp-callback-validator
 ```
-
-**Protip:** you should browse the
-[`willdurand/jsonp-callback-validator`](https://packagist.org/packages/willdurand/jsonp-callback-validator)
-page to choose a stable version to use, avoid the `@stable` meta constraint.
-
 
 Unit Tests
 ----------
 
 Setup the test suite using Composer:
 
-    $ composer install --dev
+    $ composer install
 
 Run it using PHPUnit:
 
@@ -70,7 +61,7 @@ Run it using PHPUnit:
 Contributing
 ------------
 
-See CONTRIBUTING file.
+See [CONTRIBUTING](CONTRIBUTING.md) file.
 
 
 Credits
