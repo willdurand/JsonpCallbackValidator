@@ -66,7 +66,7 @@ class JsonpCallbackValidator
     {
         if (!is_string($callback)) {
             return false;
-	}
+        }
 
         foreach (explode('.', $callback) as $identifier) {
             if (!preg_match(self::$regexp, $identifier)) {
