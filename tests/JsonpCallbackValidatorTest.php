@@ -69,6 +69,8 @@ class JsonpCallbackValidatorTest extends PHPUnitTestCase
             array("array_of_functions['k'ey'']",  self::IS_INVALID),
             array("array_of_functions[''']",      self::IS_INVALID),
             array("array_of_functions['\'']",     self::IS_VALID),
+            array([],                             self::IS_INVALID),
+            array(new \stdClass(),                self::IS_INVALID),
         );
     }
 
