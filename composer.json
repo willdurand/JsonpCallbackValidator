@@ -5,15 +5,15 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "William DURAND",
-            "email": "william.durand1@gmail.com"
+            "name": "William Durand",
+            "email": "will+git@drnd.me"
         }
     ],
     "require": {
-        "php": "^5.3 || ^7.0"
+        "php": ">=7.1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.5 || ^5.7"
+        "symfony/phpunit-bridge": "^5.0"
     },
     "autoload": {
         "psr-0": { "JsonpCallbackValidator": "src/" }
