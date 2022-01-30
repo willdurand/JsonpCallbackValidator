@@ -1,6 +1,8 @@
 <?php
 
-class JsonpCallbackValidatorTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+
+class JsonpCallbackValidatorTest extends PHPUnitTestCase
 {
     const IS_VALID   = true;
 
